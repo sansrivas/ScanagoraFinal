@@ -1,76 +1,65 @@
 <template name="registrationpage">
     <body>
 
-    <div class="row" id="login">
-        <div class="col-md-6" id="loginside">
-            <form id='login' action='slider.html' method='post'>
-                <h3>Login</h3>
+
+    <div class="col-md-6" id="register">
+        <div class="well" id="regform">
+            <form id='register' action='slider.html' method='post'>
+
+                {{#if errorMessages}}
+                    <div class="list-errors">
+                        {{#each errorMessages}}
+                            <div class="list-item">{{this}}</div>
+                        {{/each}}
+                    </div>
+                {{/if}}
+
+                <h3>Registration</h3>
+                <div class="form-group" {{errorClass 'firstname'}}>
+                    <label for="firstname">First Name</label>
+                    <input type="text" class="form-control" name="firstname" placeholder="Enter your First Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="Last Name">Last Name</label>
+                    <input type="text" class="form-control" name="lastname" placeholder="Enter your Last Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" class="form-control" name="company" placeholder="Enter Company Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="streetaddress">Street Address</label>
+                    <input type="text" class="form-control" name="street" placeholder="Enter Street Address" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" name="city" placeholder="Enter City" required>
+                </div>
+                <div class="form-group">
+                    <label for="State">State</label>
+                    <input type="text" class="form-control" name="state" placeholder="Enter your State" required>
+                </div>
+                <div class="form-group">
+                    <label for="zip">Zip Code</label>
+                    <input type="text" class="form-control" name="zip" placeholder="Enter Zip Code" required>
+                </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="text" class="form-control" name="email" placeholder="email" required>
+                    <input type="text" class="form-control" name="email" placeholder="Enter Email Address" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Password</label>
-                    <input type="password" class="form-control" name="passwrd" placeholder="password" required>
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Choose Password" required>
                 </div>
-                <input class="btn btn-primary" type="submit" value="Submit">
-            </form>
-
-            <h3 id="larry">Login if you already have an account <br />
-                OR <br />
-                Register for a new Account.</h3>
-        </div>
-        <div class="col-md-6" id="register">
-            <div class="well" id="regform">
-                <form id='register' action='slider.html' method='post'>
-                    <h3>Registration</h3>
-                    <div class="form-group">
-                        <label for="firstname">First Name</label>
-                        <input type="text" class="form-control" name="fname" placeholder="Enter your First Name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="Last Name">Last Name</label>
-                        <input type="text" class="form-control" name="lname" placeholder="Enter your Last Name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="company">Company</label>
-                        <input type="text" class="form-control" name="company" placeholder="Enter Company Name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="streetaddress">Street Address</label>
-                        <input type="text" class="form-control" name="streetaddress" placeholder="Enter Street Address" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="city">City</label>
-                        <input type="text" class="form-control" name="city" placeholder="Enter City" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="State">State</label>
-                        <input type="text" class="form-control" name="state" placeholder="Enter your State" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="zipcode">Zip Code</label>
-                        <input type="text" class="form-control" name="zipcode" placeholder="Enter Zip Code" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="text" class="form-control" name="email" placeholder="Enter Email Address" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" name="password" placeholder="Choose Password" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Re-Enter Password</label>
-                        <input type="password" class="form-control" name="reenterpassword" placeholder="Confirm Password" required>
-                    </div>
-                    <div class="button">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </form></div>
-        </div>
+                <div class="form-group">
+                    <label for="password">Re-Enter Password</label>
+                    <input type="password" class="form-control" name="confirm" placeholder="Confirm Password" required>
+                </div>
+                <div class="button">
+                    <button type="submit" class="btn btn-primary" >Submit</button>
+                </div>
+            </form></div>
     </div>
-
 
     </body>
 </template>

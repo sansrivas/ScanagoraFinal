@@ -19,3 +19,12 @@ Router.route('/pricing', function () {
 Router.route('/registrationpage', function () {
     this.render('registrationpage');
 });
+Router.route('/package', function () {
+    this.render('package');
+});
+Router.route('/signin', function () {
+    this.render('signin');
+});
+Router.route('/dashboard', function () {
+    this.render('dashboard');
+});
