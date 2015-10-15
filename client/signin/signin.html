@@ -1,0 +1,41 @@
+<template name="signin">
+    <body>
+    <div class="page auth">
+        <div class="content-scrollable">
+            <div class="wrapper-auth">
+
+                <div class="row" id="login">
+                    <div class="col-md-6" id="loginside">
+                        <form id='login'  method='post'>
+                            {{#if errorMessages}}
+                                <div class="list-errors">
+                                    {{#each errorMessages}}
+                                        <div class="list-item">{{this}}</div>
+                                    {{/each}}
+                                </div>
+                            {{/if}}
+                            <h3>Login</h3>
+                            <div class="form-group" >
+                                <div class="input-symbol {{errorClass 'email'}}">
+                                    <label for="email">Email</label>
+                                    <input type="text" class="form-control" name="email" placeholder="email" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-symbol {{errorClass 'password'}}">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" name="password" placeholder="password" required>
+                                </div>
+                            </div>
+                            <input class="btn btn-primary" type="submit" value="Submit">
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+
+</template>
